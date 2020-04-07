@@ -1,0 +1,387 @@
+[
+    {
+        "id": "11b2a07.afe5f6",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "49b9947.7e9c36c",
+        "type": "http in",
+        "z": "11b2a07.afe5f6",
+        "name": "",
+        "url": "/signup",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 90,
+        "y": 40,
+        "wires": [
+            [
+                "71a8c063.846b1"
+            ]
+        ]
+    },
+    {
+        "id": "8cc6abdc.128aa8",
+        "type": "http response",
+        "z": "11b2a07.afe5f6",
+        "name": "",
+        "statusCode": "",
+        "headers": {
+            "content-type": "text/html"
+        },
+        "x": 950,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "71a8c063.846b1",
+        "type": "template",
+        "z": "11b2a07.afe5f6",
+        "name": "Signup",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "html",
+        "syntax": "mustache",
+        "template": "<!--<html>  -->\n<!--  <head>-->\n<!--  </head>-->\n<!--  <body>-->\n<!--    <form action=\"/signup\" method=\"post\">-->\n<!--      <h1>Enter your information below to sign up for our newsletter</h1>-->\n<!--      <label for=\"username\">Username</label>-->\n<!--      <input type=\"text\" name=\"name\" />-->\n<!--      <br>-->\n<!--      <label for=\"pass\">Password</label>-->\n<!--      <input type=\"text\" name=\"password\" />-->\n<!--      <br>-->\n<!--     <input type=\"submit\" />-->\n<!--    </form>-->\n<!--  </body>-->\n<!--</html>  -->\n\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link href=\"https://fonts.googleapis.com/css?family=Roboto:400,700\" rel=\"stylesheet\">\n<title>Registeration For Farm</title>\n<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\n<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js\"></script>\n<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script> \n<style type=\"text/css\">\n\tbody {\n\t\tcolor: #fff;\n\t\tbackground: #4c535d;\n\t\tfont-family: 'Roboto', sans-serif;\n\t}\n    .form-control {\n        min-height: 41px;\n\t\tbox-shadow: none;\n\t\tborder-color: #e1e4e5;\n\t}\n    .form-control:focus {\n\t\tborder-color: #5fcaba;\n\t}\n    .form-control, .btn {        \n        border-radius: 3px;\n    }    \n\t.signup-form {\n\t\twidth: 400px;\n\t\tmargin: 0 auto;\n\t\tpadding: 30px 0;\n\t}\t\n    .signup-form form {\n\t\tcolor: #9ba5a8;\n\t\tborder-radius: 3px;\n    \tmargin-bottom: 15px;\n        background: #fff;\n        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);\n        padding: 30px;\n    }\n\t.signup-form h2 {\n\t\tcolor: #333;\n\t\tfont-weight: bold;\n        margin-top: 0;\n    }\n    .signup-form hr {\n        margin: 0 -30px 20px;\n    }\n\t.signup-form .form-group {\n\t\tmargin-bottom: 20px;\n\t}\n    .signup-form label {\n\t\tfont-weight: normal;\n\t\tfont-size: 13px;\n\t}\n    .signup-form .btn {        \n        font-size: 16px;\n        font-weight: bold;\n\t\tbackground: #5fcaba;\n\t\tborder: none;\n\t\tmin-width: 140px;\n    }\n\t.signup-form .btn:hover, .signup-form .btn:focus {\n\t\tbackground: #3fc0ad;\n        outline: none !important;\n\t}\n\t.signup-form a {\n\t\tcolor: #fff;\n\t\ttext-decoration: underline;\n\t}\n    .signup-form a:hover {\n\t\ttext-decoration: none;\n\t}\n\t.signup-form form a {\n\t\tcolor: #5fcaba;\n\t\ttext-decoration: none;\n\t}\t\n\t.signup-form form a:hover {\n\t\ttext-decoration: underline;\n\t}\n</style>\n</head>\n<body>\n<div class=\"signup-form\">\n    <form action=\"/signup\" method=\"post\">\n\t\t<h2>Sign Up</h2>\n\t\t<p>Register here to get access to farm</p>\n\t\t<hr>\n        <div class=\"form-group\">\n        \t<input type=\"text\" class=\"form-control\" name=\"name\" placeholder=\"Username\" required=\"required\">\n        </div>\n\t\t<div class=\"form-group\">\n            <input type=\"password\" class=\"form-control\" name=\"password\" placeholder=\"Password\" required=\"required\">\n        </div>\n\t\t<div class=\"form-group\">\n            <button type=\"submit\" class=\"btn btn-primary btn-block btn-lg\">Sign Up</button>\n        </div>\n\t\t<p class=\"small text-center\">By clicking the Sign Up button, you agree to our <br><a href=\"\">Terms &amp; Conditions</a>, and <a href=\"#\">Privacy Policy</a>.</p>\n    </form>\n\t<div class=\"text-center\">Already have an account? <a href=\"127.0.0.1:1880/login\">Login here</a></div>\n</div>\n</body>\n</html>  ",
+        "output": "str",
+        "x": 500,
+        "y": 40,
+        "wires": [
+            [
+                "8cc6abdc.128aa8"
+            ]
+        ]
+    },
+    {
+        "id": "c0705a90.32c208",
+        "type": "http in",
+        "z": "11b2a07.afe5f6",
+        "name": "",
+        "url": "/signup",
+        "method": "post",
+        "upload": true,
+        "swaggerDoc": "",
+        "x": 90,
+        "y": 100,
+        "wires": [
+            [
+                "939dce07.d6a35",
+                "45cca619.c19608"
+            ]
+        ]
+    },
+    {
+        "id": "939dce07.d6a35",
+        "type": "debug",
+        "z": "11b2a07.afe5f6",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 120,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "f1c73eec.54daf",
+        "type": "mysql",
+        "z": "11b2a07.afe5f6",
+        "mydb": "a6a327a8.b3cc18",
+        "name": "eeki",
+        "x": 470,
+        "y": 100,
+        "wires": [
+            [
+                "ace172b8.75032",
+                "3136443d.6b122c"
+            ]
+        ]
+    },
+    {
+        "id": "beec7ebf.5f62",
+        "type": "http response",
+        "z": "11b2a07.afe5f6",
+        "name": "",
+        "statusCode": "",
+        "headers": {
+            "location": "/login"
+        },
+        "x": 950,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "45cca619.c19608",
+        "type": "function",
+        "z": "11b2a07.afe5f6",
+        "name": "insert_query",
+        "func": "var name_ = msg.payload.name;\nvar pass_ = msg.payload.password;\nvar name = \"'\"+name_+\"'\";\nvar pass = \"('\"+pass_+\"')\";\nmsg.topic = \"INSERT INTO users (username,password) VALUES(\"+name+\",MD5\"+pass+\")\" ;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 290,
+        "y": 100,
+        "wires": [
+            [
+                "f1c73eec.54daf"
+            ]
+        ]
+    },
+    {
+        "id": "ace172b8.75032",
+        "type": "debug",
+        "z": "11b2a07.afe5f6",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 480,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "3136443d.6b122c",
+        "type": "function",
+        "z": "11b2a07.afe5f6",
+        "name": "Check_insert",
+        "func": "if(msg.payload.affectedRows ==1){\n    node.log(\"Successfully registered\")\n    msg.payload = \"Successfully registered\";\n}\nelse{\n    node.log(\"Could Not Register\")\n    msg.payload = \"Regsiteration Failed\";\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 650,
+        "y": 100,
+        "wires": [
+            [
+                "8e4716be.3ba898",
+                "f9b9f468.5fecc8",
+                "3de66b40.58b044"
+            ]
+        ]
+    },
+    {
+        "id": "8e4716be.3ba898",
+        "type": "debug",
+        "z": "11b2a07.afe5f6",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 760,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "556cfefd.77f3c",
+        "type": "http in",
+        "z": "11b2a07.afe5f6",
+        "name": "",
+        "url": "/login",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 80,
+        "y": 260,
+        "wires": [
+            [
+                "f543de53.9b305"
+            ]
+        ]
+    },
+    {
+        "id": "3de66b40.58b044",
+        "type": "template",
+        "z": "11b2a07.afe5f6",
+        "name": "Login",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "html",
+        "syntax": "mustache",
+        "template": "<!--<html>  -->\n<!--  <head>-->\n<!--  </head>-->\n<!--  <body>-->\n<!--    <form action=\"/login\" method=\"post\">-->\n<!--      <h1>Enter Details to login</h1>-->\n<!--      <label for=\"username\">Username</label>-->\n<!--      <input type=\"text\" name=\"name\" />-->\n<!--      <br>-->\n<!--      <label for=\"pass\">Password</label>-->\n<!--      <input type=\"text\" name=\"password\" />-->\n<!--      <br>-->\n<!--      <input type=\"submit\" />-->\n<!--      <p>{{payload}}</p>-->\n<!--    </form>-->\n<!--  </body>-->\n<!--</html>  -->\n\n\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link href=\"https://fonts.googleapis.com/css?family=Roboto:400,700\" rel=\"stylesheet\">\n<title>Login to Farm</title>\n<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\n<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js\"></script>\n<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script> \n<style type=\"text/css\">\n\tbody {\n\t\tcolor: #fff;\n\t\tbackground: #4c535d;\n\t\tfont-family: 'Roboto', sans-serif;\n\t}\n    .form-control {\n        min-height: 41px;\n\t\tbox-shadow: none;\n\t\tborder-color: #e1e4e5;\n\t}\n    .form-control:focus {\n\t\tborder-color: #5fcaba;\n\t}\n    .form-control, .btn {        \n        border-radius: 3px;\n    }    \n\t.signup-form {\n\t\twidth: 400px;\n\t\tmargin: 0 auto;\n\t\tpadding: 30px 0;\n\t}\t\n    .signup-form form {\n\t\tcolor: #9ba5a8;\n\t\tborder-radius: 3px;\n    \tmargin-bottom: 15px;\n        background: #fff;\n        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);\n        padding: 30px;\n    }\n\t.signup-form h2 {\n\t\tcolor: #333;\n\t\tfont-weight: bold;\n        margin-top: 0;\n    }\n    .signup-form hr {\n        margin: 0 -30px 20px;\n    }\n\t.signup-form .form-group {\n\t\tmargin-bottom: 20px;\n\t}\n    .signup-form label {\n\t\tfont-weight: normal;\n\t\tfont-size: 13px;\n\t}\n    .signup-form .btn {        \n        font-size: 16px;\n        font-weight: bold;\n\t\tbackground: #5fcaba;\n\t\tborder: none;\n\t\tmin-width: 140px;\n    }\n\t.signup-form .btn:hover, .signup-form .btn:focus {\n\t\tbackground: #3fc0ad;\n        outline: none !important;\n\t}\n\t.signup-form a {\n\t\tcolor: #fff;\n\t\ttext-decoration: underline;\n\t}\n    .signup-form a:hover {\n\t\ttext-decoration: none;\n\t}\n\t.signup-form form a {\n\t\tcolor: #5fcaba;\n\t\ttext-decoration: none;\n\t}\t\n\t.signup-form form a:hover {\n\t\ttext-decoration: underline;\n\t}\n</style>\n</head>\n<body>\n<div class=\"signup-form\">\n    <form action=\"/login\" method=\"post\">\n\t\t<h2>Login</h2>\n\t\t<p>{{payload}}</p>\n\t\t<hr>\n        <div class=\"form-group\">\n        \t<input type=\"text\" class=\"form-control\" name=\"name\" placeholder=\"Username\" required=\"required\">\n        </div>\n\t\t<div class=\"form-group\">\n            <input type=\"password\" class=\"form-control\" name=\"password\" placeholder=\"Password\" required=\"required\">\n        </div>\n\t\t<div class=\"form-group\">\n            <button type=\"submit\" class=\"btn btn-primary btn-block btn-lg\">Login</button>\n        </div>\n\t\t\n    </form>\n\t<div class=\"text-center\">Don't have an account? <a href=\"127.0.0.1:1880/signup\">Sign Up here</a></div>\n</div>\n</body>\n</html>  ",
+        "output": "str",
+        "x": 550,
+        "y": 260,
+        "wires": [
+            [
+                "a56e0f0b.cdf55"
+            ]
+        ]
+    },
+    {
+        "id": "a56e0f0b.cdf55",
+        "type": "http response",
+        "z": "11b2a07.afe5f6",
+        "name": "",
+        "statusCode": "",
+        "headers": {
+            "content-type": ""
+        },
+        "x": 950,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "cb2762b6.9eed2",
+        "type": "http in",
+        "z": "11b2a07.afe5f6",
+        "name": "",
+        "url": "/login",
+        "method": "post",
+        "upload": true,
+        "swaggerDoc": "",
+        "x": 90,
+        "y": 380,
+        "wires": [
+            [
+                "f510b9f2.cbb108"
+            ]
+        ]
+    },
+    {
+        "id": "f510b9f2.cbb108",
+        "type": "function",
+        "z": "11b2a07.afe5f6",
+        "name": "auth_query",
+        "func": "var name_ = msg.payload.name;\nvar pass_ = msg.payload.password;\nvar name = \"'\"+name_+\"'\";\nvar pass = \"('\"+pass_+\"'))\";\nmsg.topic = \"SELECT * FROM users where username =\"+name+\" AND password = (SELECT MD5\"+pass;\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 270,
+        "y": 380,
+        "wires": [
+            [
+                "972d083c.9d2188",
+                "3f3727f6.16b2b8"
+            ]
+        ]
+    },
+    {
+        "id": "f9b9f468.5fecc8",
+        "type": "http request",
+        "z": "11b2a07.afe5f6",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": false,
+        "url": "127.0.0.1:1880/login",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 830,
+        "y": 140,
+        "wires": [
+            [
+                "beec7ebf.5f62"
+            ]
+        ]
+    },
+    {
+        "id": "972d083c.9d2188",
+        "type": "mysql",
+        "z": "11b2a07.afe5f6",
+        "mydb": "a6a327a8.b3cc18",
+        "name": "eeki",
+        "x": 450,
+        "y": 380,
+        "wires": [
+            [
+                "d11917a6.4a5af8",
+                "70c08a27.e2c9b4"
+            ]
+        ]
+    },
+    {
+        "id": "d11917a6.4a5af8",
+        "type": "debug",
+        "z": "11b2a07.afe5f6",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 480,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "9bb26eab.390ff",
+        "type": "http response",
+        "z": "11b2a07.afe5f6",
+        "name": "",
+        "statusCode": "",
+        "headers": {
+            "content-type": "text/html"
+        },
+        "x": 950,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "f543de53.9b305",
+        "type": "function",
+        "z": "11b2a07.afe5f6",
+        "name": "Empty payload",
+        "func": "msg.payload = \"Login here to get access to farm \";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 280,
+        "y": 260,
+        "wires": [
+            [
+                "3de66b40.58b044"
+            ]
+        ]
+    },
+    {
+        "id": "70c08a27.e2c9b4",
+        "type": "function",
+        "z": "11b2a07.afe5f6",
+        "name": "Check_auth",
+        "func": "if(msg.payload.length ==1){\n    node.log(\"Welcome to farm\")\n    msg.payload = \"Welcome to farm\";\n}\nelse{\n    node.log(\"Invalid Authentication\")\n    msg.payload = \"Invalid authentication\";\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 650,
+        "y": 380,
+        "wires": [
+            [
+                "9bb26eab.390ff"
+            ]
+        ]
+    },
+    {
+        "id": "3f3727f6.16b2b8",
+        "type": "debug",
+        "z": "11b2a07.afe5f6",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 260,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "a6a327a8.b3cc18",
+        "type": "MySQLdatabase",
+        "z": "",
+        "name": "",
+        "host": "127.0.0.1",
+        "port": "3306",
+        "db": "eeki",
+        "tz": ""
+    }
+]
